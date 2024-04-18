@@ -1,0 +1,184 @@
+Fight Club,David Fincher,2H19,1999,Drame;
+
+Forrest Gump,Robert Zemeckis,2H22,1994,Drame;
+Roméo + Juliette,Baz Luhrmann,2H,1996,Drame;
+
+Le Pianiste,
+Roman Polanski,
+2H30,
+2002,
+Drame;
+
+La Cité de la peur,
+Alain Berbérian, 
+1H40,
+1994,
+Comédie;
+
+Pulp Fiction,
+Quentin Tarantino,
+2H34,
+1994,
+Comédie;
+
+Le Fabuleux Destin d'Amélie Poulain,
+Jean-Pierre Jeunet,
+2H02,
+2001,
+Comédie;
+
+Austin Powers: International Man of Mystery,
+Jay Roach,
+1H34,
+1997,
+Comédie;
+
+Qui veut la peau de Roger Rabbit,
+Robert Zemeckis,
+1H44,
+1988,
+Comédie;
+
+L'Auberge espagnol,
+Cédric Klapisch,
+2H02,
+2002,
+Comédie;
+
+Orange mécanique,
+Stanley Kubrick,
+2H16,
+1971,
+Science-Fiction;
+
+Terminator,
+James Cameron,
+1H47,
+1984,
+Science-Fiction;
+
+Avatar,
+James Cameron,
+2H42,
+2009,
+Science-Fiction
+
+Science-Fiction;
+2001: L'Odyssée de l'espace,
+Stanley Kubrick,
+2H40,
+1968,
+Science-Fiction;
+
+Star Wars Episode V: The Empire Strikes Back,
+Irvin Kershner,
+2H04,
+1980,
+Science-Fiction;
+
+Star Wars: La Guerre des étoiles,
+George Lucsas,
+2H01,
+1977,
+Science-Fiction;
+
+Star Wars Episode VI: Return of the Jedi,
+Richard Marquand,
+2H14,
+1983,
+Science-Fiction;
+
+Princesse Mononoké,
+Hayao Miyazaki,
+2H14,
+1997,
+Animation;
+
+Le Tombeau des lucioles,
+Isao Takahata,
+1H29,
+1988,
+Animation;
+
+Le Voyage de Chihiro,
+Hayao Miyazaki,
+2H05,
+2001,
+Animation;
+
+Mon voisin Totoro,
+Hayao Miyazaki,
+1H26,
+1988,
+Animation;
+
+Les Indestructibles,
+Brad Bird,
+1H55,
+2004,
+Animation; 
+
+
+Les Aventuriers de l'arche perdue,
+Steven Spielberg,
+1H55,
+1981,
+Aventure;
+
+Indiana Jones et la Dernière Croisade,
+Steven Spielberg,
+2H07,
+1989,
+Aventure;
+
+Le Seigneur des Anneaux - La Communauté de l'anneau,
+Peter Jackson,
+2H58,
+2001,
+Aventure;
+
+Indiana Jones et le Temple maudit,
+Steven Spielberg,
+1H58,
+1984,
+Aventure;
+
+Jurassic Park,
+Steven Spielberg,
+2H07,
+1993,
+Aventure;
+
+Le Seigneur des Anneaux - Le Retour du roi,
+Peter Jackson,
+3H21,
+2003,
+Aventure;
+
+Reservoir Dogs,
+Quentin Tarantino,
+1H39,
+1992,
+Action;
+
+Skyfall,
+Sam Mendes,
+2H23,
+2012,
+Action;
+
+Kill Bill - Volume 1,
+Quentin Tarantino,
+1H51,
+2003,
+Action;
+
+Rambo,
+Ted Kotcheff,
+1H33,
+1982,
+Action;
+
+
+
+
