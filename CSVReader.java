@@ -20,7 +20,7 @@ public CSVReader() {
 }
 
 public ArrayList<Film> lire() throws IOException{
-	File csvfile= new File("D:\\Users\\Alexis\\Desktop\\Semestre 2\\Programmation Java\\eclipse-workspace\\javamodèle\\src\\javamodèle\\test.csv"); 
+	File csvfile= new File("D:\\\\Users\\\\Alexis\\\\Desktop\\\\Semestre 2\\\\Programmation Java\\\\eclipse-workspace\\\\javamodèle\\\\src\\\\javamodèle\\\\test.csv"); 
 	BufferedReader br = new BufferedReader(new FileReader(csvfile)); 
 	String line = ""; 
 	try {
