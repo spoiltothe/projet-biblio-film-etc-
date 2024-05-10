@@ -1,8 +1,7 @@
-package javamodèle;
-
+package javamodelefinal;
 import java.io.Serializable;
 
-public class Film implements Comparable,Serializable{
+public class Film implements Comparable<Film>,Serializable{
 	private static final long serialVersionUID = 1L;
 	public String id ; 
 	public String nom; 
@@ -23,11 +22,11 @@ public class Film implements Comparable,Serializable{
 	
 	
 
-	public Film(String i, String n, String g, String du, String a,  String r, String c, String av, String t, String s, String to, String gs) {
+	public Film(String i, String n, String genre, String du, String a,  String r, String c, String av, String t, String s, String to, String gs) {
 		this.id=i; 
 		this.nom=n;
 		this.durée=du;  
-		this.genre=g; 
+		this.genre=genre; 
 		this.année=a; 
 	 
 		this.réalisateur=r; 
@@ -38,9 +37,7 @@ public class Film implements Comparable,Serializable{
 		this.tournage=to;
 		this.genre_score=gs; 
 		this.favori=false; 
-
-		
-		
+	
 		
 	}
 	@Override
@@ -48,6 +45,8 @@ public class Film implements Comparable,Serializable{
 		return "id : "+ this.id + " nom : " + this.nom +  " durée : "+ this.durée + " genre :" + this.genre + " année : "+ this.année + " réalisateur :" + this.réalisateur;
 			
 	}
+	
+	
 	
 	public double getScore() {
 		return (Double.parseDouble(critique)+Double.parseDouble(avis_public)+Double.parseDouble(theme)+Double.parseDouble(scénario)+Double.parseDouble(tournage)+Double.parseDouble(genre_score))/6; 
@@ -57,10 +56,10 @@ public class Film implements Comparable,Serializable{
 	}
 
 	@Override
-	public int compareTo(Object o) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int compareTo(Film o) {
+		return this.id.compareTo(o.id);
 	}
 
 }
+
 

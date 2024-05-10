@@ -1,6 +1,7 @@
-package javamodèle;
-
+package javamodelefinal;
+ 
 import java.io.BufferedReader;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -20,7 +21,7 @@ public CSVReader() {
 }
 
 public ArrayList<Film> lire() throws IOException{
-	File csvfile= new File("D:\\\\Users\\\\Alexis\\\\Desktop\\\\Semestre 2\\\\Programmation Java\\\\eclipse-workspace\\\\javamodèle\\\\src\\\\javamodèle\\\\test.csv"); 
+	File csvfile= new File("D:\\Users\\Alexis\\Desktop\\Semestre 2\\Programmation Java\\eclipse-workspace\\javamodelefinal\\src\\javamodelefinal\\\\test.csv"); 
 	BufferedReader br = new BufferedReader(new FileReader(csvfile)); 
 	String line = ""; 
 	try {
@@ -45,12 +46,8 @@ public ArrayList<Film> lire() throws IOException{
 
 
 	for (int i=1; i<this.data.size(); i++) {
-
-		
 		Film f = new Film(data.get(i).get(0),data.get(i).get(1),data.get(i).get(2),data.get(i).get(3),data.get(i).get(4),data.get(i).get(5),data.get(i).get(6),data.get(i).get(7),data.get(i).get(8),data.get(i).get(9),data.get(i).get(10),data.get(i).get(11) );
 		this.films.add(f);
-		
-		
 	}
 			
 		

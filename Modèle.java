@@ -1,5 +1,6 @@
-package javamodèle;
+package javamodelefinal;
 import java.util.ArrayList;
+
 
 
 
@@ -22,6 +23,7 @@ public int durée_fav;
 public int année_fav; 
 public String série_fav;
 public String réalisateur_fav; 
+public String recent_id; 
 		
 		
 public Modèle() throws FileNotFoundException,IOException {
@@ -47,6 +49,7 @@ public String toString() {
 	}
 	return s; 
 }
+
 		
 	public void ajoutFilm(Film f) {
 		this.catalogue.add(f); 
@@ -60,9 +63,10 @@ public String toString() {
 			}
 		}
 		
-	
+	    this.recent_id=id2; 
 		this.setChanged();
 		this.notifyObservers(this.films_favoris);
+		this.notifyObservers(this.recent_id);
 	 
 	}
 
@@ -202,6 +206,24 @@ public String toString() {
 		
 	}
 	
+	
+	public void reset_id( ) {
+		for (int i=0; i<this.films_favoris.size(); i++) {
+			if (this.films_favoris.get(i).id.equalsIgnoreCase(this.recent_id)) {
+				this.films_favoris.get(i).favori=false; 
+				this.films_favoris.remove(i); 
+				i-=1; 
+				
+			}
+		}
+		this.setChanged();
+		this.notifyObservers(this.films_favoris);
+		
+		
+	}
+	
+	
+	
 	public void reset_nom( ) {
 		for (int i=0; i<this.films_favoris.size(); i++) {
 			if (this.films_favoris.get(i).nom.equalsIgnoreCase(this.série_fav)) {
@@ -248,14 +270,15 @@ public String toString() {
 				i-=1; 
 				
 			}
-			if (ordre=="desc") {
+			}
+			if (ordre=="desc") { 
 				if (duréei>this.durée_fav) {
 					this.films_favoris.get(i).favori=false; 
 					this.films_favoris.remove(i); 
 					i-=1; 
 				}
 			}
-		}
+		
 		}
 	
 		
@@ -312,17 +335,18 @@ public String toString() {
 	
 		 Modèle m =new Modèle(); 
 	
-		 m.triergenre("action");
-		 m.trierannée("2000", "desc");
-		 m.reset_annee("desc");
+		
+		 m.triergenre("aventure");
+		 m.trierréa("Steven Spielberg");
+		 m.reset_réa();
+		 
+		 
+		 
 		
 		 
 		 
 	
- 
-		 for (int i=0; i<m.films_favoris.size();i++) {
-			 System.out.println(m.films_favoris.get(i)); 
-		 }
+
 		 
 		
 		 
@@ -334,6 +358,7 @@ public String toString() {
 		
 	    		
 	}}
+
 
 
 
