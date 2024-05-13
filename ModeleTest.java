@@ -2,6 +2,7 @@ package javamodelefinal;
 
 import static org.junit.Assert.*;
 
+
 import java.util.ArrayList;
 
 import org.junit.After;
@@ -34,7 +35,7 @@ public class ModeleTest {
 	@Test
 	public void testtriernom() {
 		modele.triernom("rambo");
-		ex.add(new Film("33","Rambo","action","1h33","1982","Ted Kotcheff","8.6","8.8","5","7","7","6")); 
+		ex.add(new Film("32","Rambo","action","1h33","1982","Ted Kotcheff","8.6","8.8","5","7","7","6")); 
 		Assert.assertEquals(true,modele.films_favoris.toString().contentEquals(ex.toString()));
 	}
 	
@@ -51,11 +52,10 @@ public class ModeleTest {
 	@Test
 	public void testtrierduréeasc() {
 		modele.trierdurée("1h30", "asc");;
-		ex.add(new Film("19","Arthur: Malédiction","horreur","1h27","2022","Luc Besson","1","1.1","1","1","2","4")); 
-		ex.add(new Film("20","Le tombeau des lucioles","animation","1h29","1988","Isao Takahata","10","9.7","9","9","8.5","8")); 
-		ex.add(new Film("22","mon Voisin Totoro","animation","1h26","1988","Hayao Himazaki","9.3","9.4","7.5","8","8.5","8")); 
-		ex.add(new Film("37","Massacre à la tronçonneuse (1974)","horreur","1h23","1974","Tobe Hooper","8.9","8.7","6","6.5","7","5")); 
-		ex.add(new Film("38","Le Project Blair Witch","horreur","1h21","1999","Eduardo Sánchez,Daniel Myrick","8.6","7.9","5","8","9","5"));
+		ex.add(new Film("19","Le tombeau des lucioles","animation","1h29","1988","Isao Takahata","10","9.7","9","9","8.5","8")); 
+		ex.add(new Film("21","mon Voisin Totoro","animation","1h26","1988","Hayao Himazaki","9.3","9.4","7.5","8","8.5","8")); 
+		ex.add(new Film("36","Massacre à la tronçonneuse (1974)","horreur","1h23","1974","Tobe Hooper","8.9","8.7","6","6.5","7","5")); 
+		ex.add(new Film("37","Le Project Blair Witch","horreur","1h21","1999","Eduardo Sánchez,Daniel Myrick","8.6","7.9","5","8","9","5"));
 		Assert.assertEquals(true,modele.films_favoris.toString().contentEquals(ex.toString()));
 	}
 	
@@ -65,8 +65,8 @@ public class ModeleTest {
 		ex.add(new Film("6","Pulp Fiction","comédie","2h34","1994","Quentin Tarantino","9.2","9.2","7","7.5","9","6.5")); 
 		ex.add(new Film("13","Avatar","science-fiction","2h42","2009","James Cameron","8.2","8.6","8","7","9.5","7")); 
 		ex.add(new Film("14","2001: l'Odyssée de l'Espace","science-fiction","2h40","1968","Stanley Kubrick","9.2","8.4","6","6.5","9","7")); 
-		ex.add(new Film("26","Le seigneur des Anneaux: La Communauté de l'anneau","aventure","2h58","2001","Peter Jackson","9.1","8.5","6","8.5","9","7")); 
-		ex.add(new Film("29","Le Seigneur des Anneaux: le Retour du Roi","aventure","3h21","2003","Peter Jackson","9.4","8.5","6","7.5","8.5","7"));
+		ex.add(new Film("25","Le seigneur des Anneaux: La Communauté de l'anneau","aventure","2h58","2001","Peter Jackson","9.1","8.5","6","8.5","9","7")); 
+		ex.add(new Film("28","Le Seigneur des Anneaux: le Retour du Roi","aventure","3h21","2003","Peter Jackson","9.4","8.5","6","7.5","8.5","7"));
 		Assert.assertEquals(true,modele.films_favoris.toString().contentEquals(ex.toString()));
 	}
 	
@@ -80,16 +80,15 @@ public class ModeleTest {
 	
 	@Test
 	public void testtrierannéedesc() {
-		modele.trierannée("2020", "desc");
-		ex.add(new Film("19","Arthur: Malédiction","horreur","1h27","2022","Luc Besson","1","1.1","1","1","2","4")); 
-		ex.add(new Film("34","Five Nights At Freddy's","horreur","1h50","2023","Emma Tammi","3.2","8.9","5","7.5","7.5","5")); 
+		modele.trierannée("2020", "desc"); 
+		ex.add(new Film("33","Five Nights At Freddy's","horreur","1h50","2023","Emma Tammi","3.2","8.9","5","7.5","7.5","5")); 
 		Assert.assertEquals(true,modele.films_favoris.toString().contentEquals(ex.toString()));
 	}
 	
 	@Test
 	public void testtrierréalisateur() {
 		modele.trierréa("Emma tammi");
-		ex.add(new Film("34","Five Nights At Freddy's","horreur","1h50","2023","Emma Tammi","3.2","8.9","5","7.5","7.5","5")); 
+		ex.add(new Film("33","Five Nights At Freddy's","horreur","1h50","2023","Emma Tammi","3.2","8.9","5","7.5","7.5","5")); 
 		Assert.assertEquals(true,modele.films_favoris.toString().contentEquals(ex.toString()));
 	}
 	
@@ -111,8 +110,8 @@ public class ModeleTest {
 		modele.trierdurée("1h30", "asc");
 		modele.triergenre("horreur");
 		modele.reset_genre();
-		ex.add(new Film("20","Le tombeau des lucioles","animation","1h29","1988","Isao Takahata","10","9.7","9","9","8.5","8")); 
-		ex.add(new Film("22","mon Voisin Totoro","animation","1h26","1988","Hayao Himazaki","9.3","9.4","7.5","8","8.5","8")); 
+		ex.add(new Film("19","Le tombeau des lucioles","animation","1h29","1988","Isao Takahata","10","9.7","9","9","8.5","8")); 
+		ex.add(new Film("21","mon Voisin Totoro","animation","1h26","1988","Hayao Himazaki","9.3","9.4","7.5","8","8.5","8")); 
 		Assert.assertEquals(true,modele.films_favoris.toString().contentEquals(ex.toString()));
 	}
 	
@@ -122,8 +121,8 @@ public class ModeleTest {
 		modele.triergenre("aventure");
 		modele.trierdurée("2h30", "asc");
 		modele.reset_durée("asc");
-		ex.add(new Film("26","Le seigneur des Anneaux: La Communauté de l'anneau","aventure","2h58","2001","Peter Jackson","9.1","8.5","6","8.5","9","7")); 
-		ex.add(new Film("29","Le Seigneur des Anneaux: le Retour du Roi","aventure","3h21","2003","Peter Jackson","9.4","8.5","6","7.5","8.5","7"));
+		ex.add(new Film("25","Le seigneur des Anneaux: La Communauté de l'anneau","aventure","2h58","2001","Peter Jackson","9.1","8.5","6","8.5","9","7")); 
+		ex.add(new Film("28","Le Seigneur des Anneaux: le Retour du Roi","aventure","3h21","2003","Peter Jackson","9.4","8.5","6","7.5","8.5","7"));
 		Assert.assertEquals(true,modele.films_favoris.toString().contentEquals(ex.toString()));
 	}
 	
@@ -132,8 +131,8 @@ public class ModeleTest {
 		modele.trierréa("Steven Spielberg");
 		modele.trierdurée("2h00", "desc");
 		modele.reset_durée("desc");
-		ex.add(new Film("24","Les Aventuriers de l'Arche perdue","aventure","1h55","1981","Steven Spielberg","10","9.1","6.5","7.5","9","6")); 
-		ex.add(new Film("27","Indiana Jones et le Temple maudit","aventure","1h58","1984","Steven Spielberg","7.7","8.5","6.5","7","8.5","6"));
+		ex.add(new Film("23","Les Aventuriers de l'Arche perdue","aventure","1h55","1981","Steven Spielberg","10","9.1","6.5","7.5","9","6")); 
+		ex.add(new Film("26","Indiana Jones et le Temple maudit","aventure","1h58","1984","Steven Spielberg","7.7","8.5","6.5","7","8.5","6"));
 		Assert.assertEquals(true,modele.films_favoris.toString().contentEquals(ex.toString()));
 	}
 	
@@ -153,10 +152,10 @@ public class ModeleTest {
 		modele.triergenre("horreur");
 		modele.trierannée("2020", "desc");
 		modele.reset_annee("desc");
-		ex.add(new Film("35","Shining","horreur","2h26","1980","Stanley Kubrick","8.3","8.8","7.5","7","6.5","6")); 
-		ex.add(new Film("36","Scream (1996)","horreur","1h51","1996","Wes Craven","8.1","8.6","7.5","7","8","5")); 
-		ex.add(new Film("37","Massacre à la tronçonneuse (1974)","horreur","1h23","1974","Tobe Hooper","8.9","8.7","6","6.5","7","5")); 
-		ex.add(new Film("38","Le Project Blair Witch","horreur","1h21","1999","Eduardo Sánchez,Daniel Myrick","8.6","7.9","5","8","9","5")); 
+		ex.add(new Film("34","Shining","horreur","2h26","1980","Stanley Kubrick","8.3","8.8","7.5","7","6.5","6")); 
+		ex.add(new Film("35","Scream (1996)","horreur","1h51","1996","Wes Craven","8.1","8.6","7.5","7","8","5")); 
+		ex.add(new Film("36","Massacre à la tronçonneuse (1974)","horreur","1h23","1974","Tobe Hooper","8.9","8.7","6","6.5","7","5")); 
+		ex.add(new Film("37","Le Project Blair Witch","horreur","1h21","1999","Eduardo Sánchez,Daniel Myrick","8.6","7.9","5","8","9","5")); 
 		Assert.assertEquals(true,modele.films_favoris.toString().contentEquals(ex.toString()));
 	}
 	
@@ -165,9 +164,8 @@ public class ModeleTest {
 		modele.triergenre("aventure");
 		modele.trierréa("Steven Spielberg");
 		modele.reset_réa(); 
-		ex.add(new Film("26","Le seigneur des Anneaux: La Communauté de l'anneau","aventure","2h58","2001","Peter Jackson","9.1","8.5","6","8.5","9","7")); 
-		ex.add(new Film("29","Le Seigneur des Anneaux: le Retour du Roi","aventure","3h21","2003","Peter Jackson","9.4","8.5","6","7.5","8.5","7"));
-		ex.add(new Film("39","Super Mario Bros","aventure","1h44","1993","Annabel Jankel,Rocky Morton","2.9","6.1","4","5","4","6")); 
+		ex.add(new Film("25","Le seigneur des Anneaux: La Communauté de l'anneau","aventure","2h58","2001","Peter Jackson","9.1","8.5","6","8.5","9","7")); 
+		ex.add(new Film("28","Le Seigneur des Anneaux: le Retour du Roi","aventure","3h21","2003","Peter Jackson","9.4","8.5","6","7.5","8.5","7"));
 		Assert.assertEquals(true,modele.films_favoris.toString().contentEquals(ex.toString()));
 	}
 	

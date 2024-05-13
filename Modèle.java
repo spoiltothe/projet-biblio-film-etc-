@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 
 
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.Observable;
@@ -12,9 +13,10 @@ import java.util.Observer;
 import java.util.PriorityQueue;
 import java.io.*; 
 import java.util.Scanner;
-import java.util.Set; 
+import java.util.Set;
+import javax.swing.ImageIcon;
 import java.lang.Comparable; 
-public class Modèle extends Observable implements Serializable {
+public class Modèle extends Observable implements Serializable  {
 private static final long serialVersionUID = 1L;
 public ArrayList<Film> catalogue;
 public ArrayList<Film> films_favoris; 
@@ -24,12 +26,17 @@ public int année_fav;
 public String série_fav;
 public String réalisateur_fav; 
 public String recent_id; 
+public ArrayList<ImageIcon> images;
+public DossierReader liens;  
 		
 		
 public Modèle() throws FileNotFoundException,IOException {
       CSVReader csv = new CSVReader();
+      this.liens = new DossierReader(); 
       this.catalogue = csv.lire();  
-      this.films_favoris=new ArrayList<Film>(); 
+      this.films_favoris=new ArrayList<Film>();
+      this.images = this.liens.charger(); 
+     
 			
 			
       
@@ -41,6 +48,13 @@ public Modèle() throws FileNotFoundException,IOException {
 			
 			
 		}
+
+
+
+
+public ArrayList<ImageIcon> getImages(){
+	return images;
+}
 		@Override
 public String toString() {
     String s = ""; 
@@ -50,27 +64,23 @@ public String toString() {
 	return s; 
 }
 
-		
-	public void ajoutFilm(Film f) {
-		this.catalogue.add(f); 
-		
-	}
 
-	public void trierid(String id2) {
+	public ArrayList<Film> trierid(String id2) {
 		for (int i=0; i<this.catalogue.size(); i++) {
 			if (this.catalogue.get(i).id.equalsIgnoreCase(id2) && !this.films_favoris.contains(this.catalogue.get(i))) {
 				this.films_favoris.add(this.catalogue.get(i)); 
 			}
 		}
 		
-	    this.recent_id=id2; 
+	    this.recent_id=id2;  
 		this.setChanged();
 		this.notifyObservers(this.films_favoris);
 		this.notifyObservers(this.recent_id);
+	    return this.films_favoris;
 	 
 	}
 
-	public void triernom(String n) {
+	public ArrayList<Film> triernom(String n) {
 
 		
 		for (int i=0; i<this.catalogue.size(); i++) {
@@ -85,10 +95,11 @@ public String toString() {
 		this.setChanged();
 		this.notifyObservers(this.films_favoris);
 		this.notifyObservers(this.série_fav);
+		return this.films_favoris; 
  
 	}
 
-	public void triergenre(String g) { 
+	public  ArrayList<Film> triergenre(String g) { 
 		
 		for (int i=0; i<this.catalogue.size(); i++) {
 			if (this.catalogue.get(i).genre.equalsIgnoreCase(g) && !this.films_favoris.contains(this.catalogue.get(i))) {
@@ -103,10 +114,11 @@ public String toString() {
 		this.setChanged();
 		this.notifyObservers(this.films_favoris);
 		this.notifyObservers(this.genre_fav); 
+		return this.films_favoris;
 	 
 	}
 
-	public void trierdurée(String d, String classement_tri) {
+	public  ArrayList<Film> trierdurée(String d, String classement_tri) {
 		String[] hm = d.split("h");
 		int heures = Integer.parseInt(hm[0]);
 		int minutes = Integer.parseInt(hm[1]);
@@ -145,11 +157,11 @@ public String toString() {
 		this.setChanged();
 		this.notifyObservers(this.films_favoris);
 		this.notifyObservers(this.durée_fav); 
-		
+		return this.films_favoris;
 	}
 	
 
-	public void trierannée(String an, String classement_tri) {
+	public  ArrayList<Film> trierannée(String an, String classement_tri) {
 		int ann = Integer.parseInt(an); 
 		 
 		
@@ -180,11 +192,11 @@ public String toString() {
 		this.setChanged();
 		this.notifyObservers(this.films_favoris);
 		this.notifyObservers(this.année_fav);
-		
+		return this.films_favoris;
 	}
 	
 
-	public void trierréa(String réa) {
+	public  ArrayList<Film> trierréa(String réa) {
 		 
 		
 		for (int i=0; i<this.catalogue.size(); i++) {
@@ -203,11 +215,11 @@ public String toString() {
 		this.setChanged();
 		this.notifyObservers(this.films_favoris);
 		this.notifyObservers(this.réalisateur_fav);
-		
+		return this.films_favoris;
 	}
 	
 	
-	public void reset_id( ) {
+	public  ArrayList<Film> reset_id( ) {
 		for (int i=0; i<this.films_favoris.size(); i++) {
 			if (this.films_favoris.get(i).id.equalsIgnoreCase(this.recent_id)) {
 				this.films_favoris.get(i).favori=false; 
@@ -218,13 +230,13 @@ public String toString() {
 		}
 		this.setChanged();
 		this.notifyObservers(this.films_favoris);
-		
+		return this.films_favoris;
 		
 	}
 	
 	
 	
-	public void reset_nom( ) {
+	public  ArrayList<Film> reset_nom( ) {
 		for (int i=0; i<this.films_favoris.size(); i++) {
 			if (this.films_favoris.get(i).nom.equalsIgnoreCase(this.série_fav)) {
 				this.films_favoris.get(i).favori=false; 
@@ -235,11 +247,11 @@ public String toString() {
 		}
 		this.setChanged();
 		this.notifyObservers(this.films_favoris);
-		
+		return this.films_favoris;
 		
 	}
-	
-	public void reset_genre() {
+
+	public ArrayList<Film> reset_genre() {
 		for (int i=0; i<this.films_favoris.size(); i++) {
 			if (this.films_favoris.get(i).genre.equalsIgnoreCase(this.genre_fav)) {
 				this.films_favoris.get(i).favori=false; 
@@ -250,11 +262,11 @@ public String toString() {
 		}
 		this.setChanged();
 		this.notifyObservers(this.films_favoris);
-		
+		return this.films_favoris;
 	
 	}
 	
-	public void reset_durée(String ordre) {
+	public  ArrayList<Film> reset_durée(String ordre) {
 		
 		
 		for (int i=0; i<this.films_favoris.size(); i++) {
@@ -283,12 +295,12 @@ public String toString() {
 	
 		
 	this.setChanged();
-		this.notifyObservers(this.films_favoris);
-		
+	this.notifyObservers(this.films_favoris);
+	return this.films_favoris;	
 		
 }
 
-	public void reset_annee(String ordre) {
+	public  ArrayList<Film> reset_annee(String ordre) {
 		for (int i=0; i<this.films_favoris.size(); i++) {
 			int anneei = Integer.parseInt(this.films_favoris.get(i).année); 
 			if (ordre=="asc") {
@@ -308,11 +320,11 @@ public String toString() {
 		}
 		this.setChanged();
 		this.notifyObservers(this.films_favoris);
-		
+		return this.films_favoris;
 	
 	}
 
-	public void reset_réa() {
+	public  ArrayList<Film> reset_réa() {
 		for (int i=0; i<this.films_favoris.size(); i++) {
 			if (this.films_favoris.get(i).réalisateur.equalsIgnoreCase(réalisateur_fav)) {
 				this.films_favoris.get(i).favori=false; 
@@ -323,7 +335,7 @@ public String toString() {
 		}
 		this.setChanged();
 		this.notifyObservers(this.films_favoris);
-		
+		return this.films_favoris;
 	
 	}
 
@@ -336,10 +348,7 @@ public String toString() {
 		 Modèle m =new Modèle(); 
 	
 		
-		 m.triergenre("aventure");
-		 m.trierréa("Steven Spielberg");
-		 m.reset_réa();
-		 
+		 System.out.println(m.images); 		 
 		 
 		 
 		

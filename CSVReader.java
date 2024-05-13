@@ -2,6 +2,8 @@ package javamodelefinal;
  
 import java.io.BufferedReader;
 
+
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -10,7 +12,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
-import java.util.PriorityQueue;
 
 public class CSVReader {
 public ArrayList<List<String>> data;
@@ -21,7 +22,7 @@ public CSVReader() {
 }
 
 public ArrayList<Film> lire() throws IOException{
-	File csvfile= new File("D:\\Users\\Alexis\\Desktop\\Semestre 2\\Programmation Java\\eclipse-workspace\\javamodelefinal\\src\\javamodelefinal\\\\test.csv"); 
+	File csvfile= new File("D:\\Users\\\\test.csv"); 
 	BufferedReader br = new BufferedReader(new FileReader(csvfile)); 
 	String line = ""; 
 	try {
@@ -60,14 +61,7 @@ public ArrayList<Film> lire() throws IOException{
 
 public static void main(String[] args) throws Exception  {
 	
-	CSVReader c = new CSVReader()
-			;
-	c.lire(); 
 	
-	Iterator<Film> i = c.films.iterator(); 
-	while(i.hasNext()) {
-		System.out.println(i.next().toString()); 
-	}
 }
 
 }
